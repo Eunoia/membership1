@@ -1,5 +1,9 @@
 Membership1::Application.routes.draw do
+  resources :pages
+
   devise_for :users
+
+  root 'pages#hello'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
