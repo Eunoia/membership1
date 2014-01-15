@@ -1,0 +1,25 @@
+<% @companies.each do |comp| %>
+	<h3><%= comp.name %></h3>
+	<ul>
+		<% comp.categories.each do |cat| %>
+			<li>
+				<%= cat.name %>
+			</li>
+		<% end %>
+		<% comp.plans.each do |plan| %>
+			<% if plan.seats_open? %>
+				<p>
+					<b><%= plan.name %></b>($<%= plan.price %>)<br>
+					<%= plan.description %>
+					<br>
+					<small>
+						<%= plan.max_seats %> max seats,
+						<%= plan.seats_available %> seats available<br>
+					</small>
+				</p>
+			<% else %>
+				<p> No plans avaliable </p>
+			<% end %>
+		<% end %>
+	</ul>
+<% end %>

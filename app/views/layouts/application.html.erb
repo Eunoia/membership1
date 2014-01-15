@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+ 
+<h1><a href="/">Membership1</a></h1>
+<br>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<hr />
 <%= yield %>
-
+<hr />
+<footer>
+<%= link_to "Companies", companies_path %>|
+<%= link_to "Categories", categories_path %>
+<br>
+<small>
+Copyright 2014
+</small>
 </body>
 </html>

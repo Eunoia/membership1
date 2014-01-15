@@ -8,15 +8,15 @@ class ApplicationController < ActionController::Base
   protected
  
    def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:phone,:address,:city,:state,:zipcode]
+    devise_parameter_sanitizer.for(:sign_up) << [:phone,:address,:city,:state,:zipcode, :image_url, :url, :description, :name]
     # devise_parameter_sanitizer.for(:account_update) << [:zipcode, :phone_number]
    end
 
-  def devise_parameter_sanitizer
-    if resource_class == User
-      User::ParameterSanitizer.new(User, :user, params)
-    else
-      super
-    end
-  end
+  # def devise_parameter_sanitizer
+  #   if resource_class == User
+  #     User::ParameterSanitizer.new(User, :user, params)
+  #   else
+  #     super
+  #   end
+  # end
 end

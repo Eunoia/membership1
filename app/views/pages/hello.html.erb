@@ -1,8 +1,20 @@
 <h1>Hello World!</h1>
 
+<div id="gyms">Join Here as a 
+<%= link_to "Company!", new_company_session_path %>
+
+</div>
+<div id="user">Join Here as a 
+<%= link_to "User!", new_user_session_path %>
+</div>
+
+
+
 <% if current_user %>
 	Welcome Back, <%= current_user.email %><br />
 	You live in <%= current_user.city %>
-<% else %>
-	Log in now, <%= link_to "NOW!", new_user_session_path %>
+<% end %>
+
+<% if current_company %>
+	Welcome Back, <%= current_company.email %><br />
 <% end %>
